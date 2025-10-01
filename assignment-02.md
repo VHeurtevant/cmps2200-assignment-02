@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:** Viv Heurtevant
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -103,10 +103,8 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3b.** What are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
 
-**enter answer here**
+The recurrence for the iterative solution can be written as W(n)= W(n-1)+O(1), where O(1) is the constant time from the helper function parens_update. This recurrence, when solved is O(n). Note that the span reccurence is exactly the same- this solution can not be parallelized as it is iterative and each step depends on the last, so the span is also O(n).
 
-.  
-. 
 
 
 
@@ -119,9 +117,9 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3d.** Assume that any `map`s are done in parallel, and that we use the efficient implementation of `scan` from class. What are the recurrences for the Work and Span of this solution? 
 
-**enter answer here**
+The work and span has three components we must consider-map, scan, and reduce. We know that the efficient version of scan's work is O(n), map is also work O(n), and reduce is O(n) as well. Summing these up, we have O(3n), which simplifies to O(n).
 
-.  
+Considering the span, map has a span of O(1) in parallel, while reduce and scan both have O(logn) span. In parallel computing, w choose the maximum of these elements- so we have O(logn) span.
 .  
 
 
@@ -140,13 +138,7 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3f.** Assuming any recursive calls are done in parallel, what are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
 
-**enter answer here**
+The recurrence for work can be written W(n) = 2W(n/2)+O(1), as the combination cost is constant. The nodes per level is 2^i.The cost will grow towards the leaves as it depends on the nodes per level (cost is constant), so we want to find the maximum level. The maximum level will be at log_2(n), so we have cost $2^{log_2(n)}=n$. So the work is $O(n)$.
 
-.  
-. 
-
-
- 
- 
-
-
+For the span recurrence, we have S(n) = S(n/2)+O(1)
+This is a balanced reccurence as the nodes per level is constant as well as the cost per level. To find the upper bound, we consider the longest dependency chain/depth of tree, which is log_2(n). So the span is O(logn).
