@@ -117,7 +117,7 @@ The recurrence for the iterative solution can be written as W(n)= W(n-1)+O(1), w
 
 **3d.** Assume that any `map`s are done in parallel, and that we use the efficient implementation of `scan` from class. What are the recurrences for the Work and Span of this solution? 
 
-The work and span has three components we must consider-map, scan, and reduce. We know that the efficient version of scan's work is O(n), map is also work O(n), and reduce is O(n) as well. Summing these up, we have O(3n), which simplifies to O(n).
+The work and span has three components we must consider-map, scan, and reduce. We know that the efficient version of scan's work is O(n), map is also work O(n), and reduce is O(n) as well. Summing these up, we have O(3n), which simplifies to O(n) work.
 
 Considering the span, map has a span of O(1) in parallel, while reduce and scan both have O(logn) span. In parallel computing, w choose the maximum of these elements- so we have O(logn) span.
 .  
