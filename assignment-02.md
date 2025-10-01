@@ -31,7 +31,7 @@ We see from the next level, the total cost is $5(n/4) > n$. So this is also a le
   We see from the next level, the total cost is $8(n^3/2^3)=n^3$. So the cost is the same at each level, meaning we have a balanced recursion. The maximum amount of levels is $\log_2(n)$, so we have a bound of $O(n^3\log_2(n)).$
 
 * $W(n)=49W(n/25)+n^{3/2}\log n$
-We write the cost of the $i$ level as $49^{i} \frac{n^{3/2}{25^{3i/2}}*\log(n)-i\log(25)$. Simplifying this, we have $n^{3/2} \frac{49}{25^{3i/2}} (\log(n)-i\log(25)).$ Note that the growth/shrink factor, $r=\frac{49}{25^3/2} = \frac{49}{125} < 1$. This implies geometric shrinking, So our cost will be dominated towards the root. Therefore the bound is simply the root, $O(n^{3/2}\log n)$
+We write the cost of the $i$ level as $49^{i} \frac{n^{3/2}}{25^{3i/2}} *\log(n)-i\log(25)$. Simplifying this, we have $n^{3/2} \frac{49}{25^{3i/2}} (\log(n)-i\log(25)).$ Note that the growth/shrink factor, $r=\frac{49}{25^3/2} = \frac{49}{125} < 1$. This implies geometric shrinking, So our cost will be dominated towards the root. Therefore the bound is simply the root, $O(n^{3/2}\log n)$
  
 * $W(n)=W(n-1)+2$
   Note that because the subproblem is only decreasing arithmetically rather than geometrically, we have a balanced recursion. The largest level will have a cost of 2,which is constant, and there will be n total levels, so our bound is $O(n)$.
