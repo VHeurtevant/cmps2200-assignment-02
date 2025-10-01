@@ -63,15 +63,22 @@ Suppose that for a given task you are choosing between the following three algor
     Which algorithm would you choose?
 
 
-.  
-.  
-.  
-.  
-. 
-. 
+First, we will write each algorithm as a recurrence.
 
+Algorithm A = 5W(n/2) + n 
+Algorithm B = 2W(n-1) + 1 
+Algorithm C = 9W(n/3) + n^2
 
+Next, we solve the recursion of each algorithm to find an upper bound.
+Algorithm A's cost at the next level will be $5(n/2) > n$, so we have geometric growth. The cost is therefore dominated by the leaves, which gives the bound $O(n^{\log_2 5})$.
 
+Algorithm B 
+Because the cost is constant, then the cost per level will depend on the amount of nodes per level. The total depth will be $n$, and there will be $2^i$ subproblems per level. This gives us a geometric sum $1+2+.4+...2^{n}$. Therefore, our maximum cost grows towards the leaves, which has a cost of $2^n$,so we have $O(2^n)$.
+
+Algorithm C
+Note that we solved algorithm C's reccurence in part 1, and determined the cost is $O(n^2\log_3(n))$.
+
+There is a clear winner amongst these algorithms- algorithm A. It has a superlinear worst case runtime, whilst the other algorithms have runtimes that are even less efficient than a quadratic.
 ## Part 3: Parenthesis Matching
 
 A common task of compilers is to ensure that parentheses are matched. That is, each open parenthesis is followed at some point by a closed parenthesis. Furthermore, a closed parenthesis can only appear if there is a corresponding open parenthesis before it. So, the following are valid:
