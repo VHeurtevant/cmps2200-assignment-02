@@ -78,7 +78,7 @@ Because the cost is constant, then the cost per level will depend on the amount 
 Algorithm C
 Note that we solved algorithm C's reccurence in part 1, and determined the cost is $O(n^2\log_3(n))$.
 
-*(Corrected Response, changed post submission. Originally I wrote algorithm A won.) We see that algorithm A wins as simplifying the log expression gives $n^{2.32}$, which dominates the quadratic term in Algorithm C- so algorithm C wins.
+*(Corrected Response, changed post submission. Originally I wrote algorithm A won.) Simplifying the log expression of algorithm A gives $n^{2.32}$, which dominates the quadratic term in Algorithm C- so algorithm C wins.
 ## Part 3: Parenthesis Matching
 
 A common task of compilers is to ensure that parentheses are matched. That is, each open parenthesis is followed at some point by a closed parenthesis. Furthermore, a closed parenthesis can only appear if there is a corresponding open parenthesis before it. So, the following are valid:
